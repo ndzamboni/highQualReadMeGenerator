@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const generateReadme = require('./readmeGenerator');
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,28 +17,7 @@ app.post('/generate', (req, res) => {
     res.render('result', { readmeContent });
 });
 
-function generateReadme(data) {
-    return `
-# ${data.title}
-
-## Description
-${data.description}
-
-## Table of Contents
-${data.tableOfContents}
-
-## Installation
-${data.installation}
-
-## Usage
-${data.usage}
-
-## License
-${data.license}
-    `;
-}
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on port \u001b]8;;http://localhost:${PORT}\u001b\\http://localhost:${PORT}\u001b]8;;\u001b\\`);
 });
