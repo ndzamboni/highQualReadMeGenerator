@@ -1,6 +1,8 @@
 const readline = require('readline');
 const fs = require('fs');
+const path = require('path');
 const generateReadme = require('./readmeGenerator');
+const { v4: uuidv4 } = require('uuid');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -11,7 +13,6 @@ const questions = [
     'Title: ',
     'Badges (comma separated): ',
     'Description: ',
-    'Table of Contents: ',
     'Installation: ',
     'Usage: ',
     'Demo: ',
@@ -27,9 +28,14 @@ const answers = {};
 
 const askQuestion = (index) => {
     if (index === questions.length) {
+        answers.tableOfContents = generateTableOfContents(answers);
         const readmeContent = generateReadme(answers);
-        fs.writeFileSync('README.md', readmeContent);
-        console.log('README.md has been generated.');
+
+        const filename = `README_${uuidv4()}.md`;
+        const filepath = path.join(__dirname, 'generated', filename);
+        fs.writeFileSync(filepath, readmeContent);
+
+        console.log(`README.md has been generated at ${filepath}`);
         rl.close();
         return;
     }
@@ -40,5 +46,17 @@ const askQuestion = (index) => {
         askQuestion(index + 1);
     });
 };
+
+function generateTableOfContents(data) {
+    return `
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Demo](#demo)
+5. [Contributions](#contributions)
+6. [Author](#author)
+7. [License](#license)
+    `;
+}
 
 askQuestion(0);
