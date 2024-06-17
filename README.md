@@ -1,7 +1,7 @@
 
 # undefined
 
-![Badge](https://img.shields.io/badge/yo%20mama-blue)
+![Badge](https://img.shields.io/badge/Javascript-blue) ![Badge](https://img.shields.io/badge/EJS-blue) ![Badge](https://img.shields.io/badge/CSS-blue) ![Badge](https://img.shields.io/badge/HTML-blue) ![Badge](https://img.shields.io/badge/NPM-blue) ![Badge](https://img.shields.io/badge/Node-blue) ![Badge](https://img.shields.io/badge/Render-blue)
 
 ## 📖 Description
 undefined
@@ -23,9 +23,9 @@ undefined
 
 ## 🧑‍💻 Author
 undefined
-[![Twitter](https://img.shields.io/badge/Twitter-test-blue)](https://twitter.com/test)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-test-blue)](https://www.linkedin.com/in/test)
-[![GitHub](https://img.shields.io/badge/GitHub-test-blue)](https://github.com/test)
+[![Twitter](https://img.shields.io/badge/Twitter-nickzam-blue)](https://twitter.com/nickzam)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-nick-zamboni-blue)](https://www.linkedin.com/in/nick-zamboni)
+[![GitHub](https://img.shields.io/badge/GitHub-ndzamboni-blue)](https://github.com/ndzamboni)
 
 ## 📜 License
 undefined
