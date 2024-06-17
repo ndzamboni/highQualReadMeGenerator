@@ -22,10 +22,28 @@ app.get('/', (req, res) => {
 });
 
 app.post('/generate', (req, res) => {
-    console.log(req.body);  // Log the body to inspect the received form data
-    const data = req.body;
+    console.log('Form Data Received:', req.body);  // Log the form data received
+
+    const data = {
+        title: req.body.title,
+        badges: req.body.badges,
+        description: req.body.description,
+        installation: req.body.installation,
+        usage: req.body.usage,
+        demo: req.body.demo,
+        contributions: req.body.contributions,
+        author: req.body.author,
+        twitter: req.body.twitter,
+        linkedin: req.body.linkedin,
+        github: req.body.github,
+        license: req.body.license,
+    };
+
+    console.log('Processed Data:', data); // Log processed data before passing to generator
+
     data.tableOfContents = generateTableOfContents(data);
     const readmeContent = generateReadme(data);
+    console.log('Generated README Content:', readmeContent);  // Log the generated README content
 
     const filename = `README_${uuidv4()}.md`;
     const filepath = path.join(generatedDir, filename);
