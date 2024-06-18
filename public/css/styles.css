@@ -8,6 +8,9 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     color: #f0f0f0; /* Light color for headings */
+    /* centered */
+    text-align: center;
+    
 }
 
 pre, code {
@@ -31,10 +34,10 @@ button:hover {
 }
 
 input[type="text"], textarea {
-    width: 100%;
+    width: 85%;
     padding: 10px;
     margin: 5px 0;
-    border: 1px solid #ccc;
+    border: 1px solid #2b1616;
     border-radius: 5px;
     background-color: #f0f0f0; /* Light background for input fields */
     color: #333; /* Dark color for input text */
@@ -50,7 +53,7 @@ form {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Light opaque background for form */
+    background-color: rgba(58, 55, 55, 0.8); /* Light opaque background for form */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
