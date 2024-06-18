@@ -9,6 +9,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+// Questions array to collect user input
 const questions = [
     'Title: ',
     'Badges (comma separated): ',
@@ -24,30 +25,39 @@ const questions = [
     'License: '
 ];
 
+// Answers object to store user input
 const answers = {};
 
+// Function to ask questions recursively
 const askQuestion = (index) => {
     if (index === questions.length) {
-        answers.tableOfContents = generateTableOfContents(answers);
+        // Once all questions are answered, generate the README
+        answers.tableOfContents = generateTableOfContents();
         const readmeContent = generateReadme(answers);
 
+        // Generate filename and filepath for the README
         const filename = `README_${uuidv4()}.md`;
         const filepath = path.join(__dirname, 'generated', filename);
+
+        // Write README content to file
         fs.writeFileSync(filepath, readmeContent);
 
+        // Output success message
         console.log(`README.md has been generated at ${filepath}`);
         rl.close();
         return;
     }
 
+    // Ask the current question and store the answer
     rl.question(questions[index], (answer) => {
-        const key = questions[index].split(' ')[0].toLowerCase();
-        answers[key] = answer;
-        askQuestion(index + 1);
+        const key = questions[index].split(' ')[0].toLowerCase().replace(':', '');
+        answers[key] = answer.trim(); // Store the trimmed answer
+        askQuestion(index + 1); // Recursively ask next question
     });
 };
 
-function generateTableOfContents(data) {
+// Function to generate table of contents (static in CLI)
+function generateTableOfContents() {
     return `
 1. [Description](#description)
 2. [Installation](#installation)
@@ -59,4 +69,5 @@ function generateTableOfContents(data) {
     `;
 }
 
+// Start asking questions from the beginning
 askQuestion(0);
