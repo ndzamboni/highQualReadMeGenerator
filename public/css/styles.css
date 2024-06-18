@@ -1,29 +1,56 @@
+/* public/css/styles.css */
+
 body {
+    background-color: #3c1642; /* Dark purple background */
+    color: #f0f0f0; /* Light color for text */
     font-family: Arial, sans-serif;
-    padding: 20px;
 }
 
-h1 {
-    text-align: center;
+h1, h2, h3, h4, h5, h6 {
+    color: #f0f0f0; /* Light color for headings */
+}
+
+pre, code {
+    background-color: #1e1e1e; /* Dark background for code blocks */
+    color: #f0f0f0; /* Light color for code text */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #6a349f; /* Purple button background */
+    color: #f0f0f0; /* Light color for button text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #542b7c; /* Darker purple on hover */
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0; /* Light background for input fields */
+    color: #333; /* Dark color for input text */
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #f0f0f0; /* Light color for labels */
 }
 
 form {
     max-width: 600px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-top: 10px;
-}
-
-input, textarea, button {
-    padding: 10px;
-    margin-top: 5px;
-}
-
-button {
-    margin-top: 20px;
-    cursor: pointer;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Light opaque background for form */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
